@@ -2,24 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Todo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Todo::create(['title' => 'Learn Laravel',  'is_done' => false]);
+        Todo::create(['title' => 'Learn Vue.js',   'is_done' => false]);
+        Todo::create(['title' => 'Build an API',   'is_done' => true]);
+        Todo::create(['title' => 'Connect Axios',  'is_done' => false]);
+        Todo::create(['title' => 'Deploy the app', 'is_done' => false]);
     }
 }
